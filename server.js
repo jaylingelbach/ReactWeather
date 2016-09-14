@@ -10,11 +10,10 @@ app.use(function(req, res, next){
   } else {
     res.redirect('http://' + req.hostname + req.url);
   }
-
 });
 
 app.use(express.static('public'));
 
-app.listen(port, function () {
+app.listen(PORT, function () {
   console.log('Express server is up on port ' + PORT);
 });
