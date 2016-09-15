@@ -1,51 +1,50 @@
-// function getTempCallback(location, callback){
+// function getTempCallback (location, callback) {
 //   callback(undefined, 78);
 //   callback('City not found');
 // }
 //
-// getTempCallback('St.Louis', function(err, temp){
+// getTempCallback('Philadelphia', function (err, temp) {
 //   if (err) {
 //     console.log('error', err);
 //   } else {
-//     console.log('sucess', temp)
+//     console.log('success', temp)
 //   }
 // });
 //
-// function getTempPromise(location){
-//   return new Promise(function(resolve, reject) {
-//     setTimeout(function(){
+// function getTempPromise (location) {
+//   return new Promise(function (resolve, reject) {
+//     setTimeout(function () {
 //       resolve(79);
 //       reject('City not found');
 //     }, 1000);
 //   });
 // }
 //
-// getTempPromise('St. Louis').then(function success(temp) {
-//     console.log('promise success', temp);
-// }, function(err) {
-//     console.log('promise error', err);
-// })
+// getTempPromise('Philadelphia').then(function (temp) {
+//   console.log('promise success', temp);
+// }, function (err) {
+//   console.log('promise error', err);
+// });
 
 // Challenge Area
-
 function addPromise (a, b) {
   return new Promise(function (resolve, reject) {
-    if (typeof a === 'number' && typeof b === 'number'){
-    resolve(a + b);
-  } else {
-      reject('One or both inputs need to be numbers');
+    if (typeof a === 'number' && typeof b === 'number') {
+      resolve(a + b);
+    } else {
+      reject('A & b need to be numbers');
     }
   });
 }
 
-addPromise(2, 3).then(function success(sum) {
-  console.log('Success: ', sum);
+addPromise(2, 3).then(function (sum) {
+  console.log('success', sum);
 }, function (err) {
-  console.log('Error: ', err);
+  console.log('error', err);
 });
 
-addPromise('jay', 9).then(function (sum) {
-  console.log('This should not show up ');
+addPromise('andrew', 9).then(function (sum) {
+  console.log('this should not show up');
 }, function (err) {
-  console.log('This should appear ', err);
+  console.log('This should appear', err);
 });

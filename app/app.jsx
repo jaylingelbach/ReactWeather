@@ -6,18 +6,16 @@ var Weather = require('Weather');
 var About = require('About');
 var Examples = require('Examples');
 
-// load foundation
-require('style!css!foundation-sites/dist/foundation.min.css');
+// Load foundation
+require('style!css!foundation-sites/dist/foundation.min.css')
 $(document).foundation();
 
 ReactDOM.render(
   <Router history={hashHistory}>
     <Route path="/" component={Main}>
-      //nested route inside route component. About and examples. IF USING IndexRoute! Then use IndexLink. Prevents multiple pages from being labeled active.
-      <Route path="examples" component={Examples}/>
       <Route path="about" component={About}/>
+      <Route path="examples" component={Examples}/>
       <IndexRoute component={Weather}/>
-
     </Route>
   </Router>,
   document.getElementById('app')
