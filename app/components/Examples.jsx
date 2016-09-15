@@ -18,7 +18,6 @@ var Examples = (props) => {
         </li>
       </ol>
     </div>
-
   )
 };
 
